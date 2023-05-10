@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="pl.ozodbek.pdfinvoice.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_cardAmountFragment"
+            app:destination="@id/cardAmountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="pl.ozodbek.pdfinvoice.ReceiverDataFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_receiverdata" >
+        <action
+            android:id="@+id/action_detailFragment_to_newReceiverFragment"
+            app:destination="@id/newReceiverFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardAmountFragment"
+        android:name="pl.ozodbek.pdfinvoice.CardAmountFragment"
+        android:label="fragment_card_amount"
+        tools:layout="@layout/fragment_card_amount" >
+        <action
+            android:id="@+id/action_cardAmountFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newReceiverFragment"
+        android:name="pl.ozodbek.pdfinvoice.NewReceiverFragment"
+        android:label="fragment_new_receiver"
+        tools:layout="@layout/fragment_new_receiver" >
+        <action
+            android:id="@+id/action_newReceiverFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+</navigation>

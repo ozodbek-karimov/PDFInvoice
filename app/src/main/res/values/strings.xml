@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">PDF invoice</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="siz_yuboryapsiz">Siz yuboryapsiz</string>
+    <string name="_100">77</string>
+    <string name="oluvchiga_keladi">Oluvchiga keladi</string>
+    <string name="kurs_1zl_2_716_0492_uzs">Kurs: 1zl = 2 716,0492 UZS</string>
+    <string name="vositachilik_haqi_vositachilik_haqisiz">Vositachilik haqi: vositachilik haqisiz</string>
+    <string name="oluvchini_tanlash">Oluvchini tanlash</string>
+    <string name="to_lov_usuli">To\'lov usuli</string>
+    <string name="debet_kartasi">Debet kartasi</string>
+    <string name="_0">0</string>
+    <string name="todo">TODO</string>
+    <string name="yangi_oluvchi">Yangi oluvchi</string>
+    <string name="saqlangan_aloqalarim">Saqlangan aloqalarim</string>
+    <string name="oluvchining_telefon_raqami">Oluvchining telefon raqami</string>
+    <string name="o_zbekiston">O\'zbekiston</string>
+    <string name="_998">+998</string>
+    <string name="telefon">Telefon</string>
+    <string name="oluvchining_to_liq_ismi">Oluvchi to\'liq ismi</string>
+    <string name="ism_lotin_harflari_bilan">Ism lotin harflari bilan</string>
+    <string name="familiya_lotin_hariflari_bilan">Familiya lotin hariflari bilan</string>
+    <string name="otasining_ismi_lotin_harflari_bilan">Otasining ismi lotin harflari bilan</string>
+    <string name="shaxsni_tasdiqlovchi_hujjatdagi_kabi_to_liq_malumotlarni_nkiriting">Shaxsni tasdiqlovchi hujjatdagi kabi to\'liq malumotlarni \nkiriting</string>
+
+</resources>

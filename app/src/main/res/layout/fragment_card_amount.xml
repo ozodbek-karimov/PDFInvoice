@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/backgroundColor"
+    android:isScrollContainer="false"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="15dp"
+    android:windowSoftInputMode="adjustResize"
+    tools:context=".CardAmountFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/gray"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/siz_yuboryapsiz"
+                android:textColor="@color/bottomline_color"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/sending_edittext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:hint="@string/_0"
+                android:inputType="numberDecimal"
+                android:maxLength="8"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textCursorDrawable="@drawable/edittext_cursor"
+                android:textSize="28sp"
+                app:layout_constraintStart_toStartOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <ImageView
+                android:id="@+id/sender_flag_imv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/poland"
+                app:layout_constraintStart_toStartOf="@+id/sending_edittext"
+                app:layout_constraintTop_toBottomOf="@+id/amount_message_tv" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="zl"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/sender_flag_imv"
+                app:layout_constraintStart_toEndOf="@+id/sender_flag_imv"
+                app:layout_constraintTop_toBottomOf="@+id/amount_message_tv" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="50dp"
+                android:text="@string/oluvchiga_keladi"
+                android:textColor="@color/bottomline_color"
+                android:textSize="15sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/receiving_edittext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:hint="@string/_0"
+                android:inputType="numberDecimal"
+                android:maxLength="8"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textCursorDrawable="@drawable/edittext_cursor"
+                android:textSize="28sp"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <ImageView
+                android:id="@+id/receiver_flag_imv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/uzbekistan"
+                app:layout_constraintStart_toStartOf="@+id/receiving_edittext"
+                app:layout_constraintTop_toBottomOf="@+id/amount_message_tv2" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="UZS"
+                android:textStyle="normal"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/receiver_flag_imv"
+                app:layout_constraintStart_toEndOf="@+id/receiver_flag_imv"
+                app:layout_constraintTop_toTopOf="@+id/receiver_flag_imv" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:src="@drawable/ic_arrow_down"
+                app:layout_constraintBottom_toBottomOf="@+id/textView4"
+                app:layout_constraintStart_toEndOf="@+id/textView4"
+                app:layout_constraintTop_toTopOf="@+id/textView4" />
+
+            <View
+                android:id="@+id/view1"
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/bottom_line"
+                app:layout_constraintEnd_toEndOf="@+id/imageView3"
+                app:layout_constraintStart_toStartOf="@+id/sender_flag_imv"
+                app:layout_constraintTop_toBottomOf="@+id/sender_flag_imv" />
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/bottom_line"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/receiver_flag_imv"
+                app:layout_constraintTop_toBottomOf="@+id/receiver_flag_imv" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/ic_exchange"
+                app:layout_constraintStart_toStartOf="@+id/view1"
+                app:layout_constraintTop_toBottomOf="@+id/view1"
+                app:tint="@color/custom_text_color1" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/kurs_1zl_2_716_0492_uzs"
+                android:textColor="@color/custom_text_color1"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:src="@drawable/ic_percent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imageView4"
+                app:layout_constraintTop_toBottomOf="@+id/imageView4"
+                app:tint="@color/custom_text_color1" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/vositachilik_haqi_vositachilik_haqisiz"
+                android:textColor="@color/custom_text_color1"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+            <TextView
+                android:id="@+id/amount_message_tv"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:text="Summa 2 27346723 zl dan ko'p \n bo'lmasligi kerak"
+                android:textColor="@color/red"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/sending_edittext"
+                app:layout_constraintTop_toBottomOf="@+id/sending_edittext" />
+
+            <TextView
+                android:id="@+id/amount_message_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+
+                android:text="Summa 2 27346723 zl dan ko'p \n bo'lmasligi kerak"
+                android:textColor="@color/red"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@+id/receiving_edittext"
+                app:layout_constraintTop_toBottomOf="@+id/receiving_edittext" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/receiver_selection_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/light_red"
+        android:textAllCaps="false"
+        android:text="@string/oluvchini_tanlash"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="30dp"
+        app:cardBackgroundColor="@color/gray"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/ic_creadit_card"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:tint="@color/custom_text_color1" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/to_lov_usuli"
+                android:textColor="@color/custom_text_color"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/imageView6"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="@string/debet_kartasi"
+                android:textColor="@color/custom_text_color1"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView10"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_arrow_down"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardViewColor">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cardViewColor"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="15dp"
+            tools:context=".NewReceiverFragment">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/receiver_card"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:cardBackgroundColor="@color/backgroundColor"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/bottomline_color"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/ic_creadit_card"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="Oluvchi kartasi"
+                        android:textColor="@color/custom_text_color1"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                        app:layout_constraintStart_toEndOf="@+id/imageView"
+                        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/ic_arrow_right"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5"
+                        app:tint="@color/light_red" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/saved_contacts"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="25dp"
+                app:cardBackgroundColor="@color/backgroundColor"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/receiver_card"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/receiver_card"
+                app:layout_constraintTop_toBottomOf="@+id/receiver_card"
+                app:strokeColor="@color/bottomline_color"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/ic_contact"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="@string/saqlangan_aloqalarim"
+                        android:textColor="@color/custom_text_color1"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+                        app:layout_constraintStart_toEndOf="@+id/imageView8"
+                        app:layout_constraintTop_toTopOf="@+id/imageView8" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/ic_arrow_right"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5"
+                        app:tint="@color/light_red" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/oluvchining_telefon_raqami"
+                android:textColor="@color/lightMediumGray"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/saved_contacts"
+                app:layout_constraintTop_toBottomOf="@+id/saved_contacts" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/phone_number_picker"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/backgroundColor"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/saved_contacts"
+                app:layout_constraintStart_toStartOf="@+id/saved_contacts"
+                app:layout_constraintTop_toBottomOf="@+id/textView6"
+                app:strokeColor="@color/bottomline_color"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:src="@drawable/uzbekistan"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="@string/o_zbekiston"
+                        android:textColor="@color/custom_text_color1"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+                        app:layout_constraintStart_toEndOf="@+id/imageView9"
+                        app:layout_constraintTop_toTopOf="@+id/imageView9" />
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text="@string/_998"
+                        android:textColor="@color/lightMediumGray"
+                        android:textSize="13sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView12"
+                        app:layout_constraintStart_toEndOf="@+id/textView12"
+                        app:layout_constraintTop_toTopOf="@+id/textView12" />
+
+                    <ImageView
+                        android:id="@+id/imageView11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/ic_arrow_right"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.5" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/receiver_phonenumber_layout_et"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/telefon"
+                android:textColorHint="@color/lightMediumGray"
+                app:boxStrokeColor="@color/color_state_selector"
+                app:boxStrokeErrorColor="@color/red"
+                app:boxStrokeWidth="2dp"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/blue"
+                app:layout_constraintEnd_toEndOf="@+id/phone_number_picker"
+                app:layout_constraintStart_toStartOf="@+id/phone_number_picker"
+                app:layout_constraintTop_toBottomOf="@+id/phone_number_picker"
+                app:prefixText="@string/_998"
+                app:prefixTextColor="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/receiver_phonenumber_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:maxLength="9"
+                    android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:textColor="@color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="@string/oluvchining_to_liq_ismi"
+                android:textColor="@color/lightMediumGray"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/receiver_phonenumber_layout_et"
+                app:layout_constraintTop_toBottomOf="@+id/receiver_phonenumber_layout_et" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:src="@drawable/ic_person"
+                app:layout_constraintStart_toStartOf="@+id/textView14"
+                app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/receiver_name_layout_et"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:hint="@string/ism_lotin_harflari_bilan"
+                android:textColorHint="@color/lightMediumGray"
+                app:boxStrokeColor="@color/color_state_selector"
+                app:boxStrokeErrorColor="@color/red"
+                app:boxStrokeWidth="2dp"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/blue"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+                app:layout_constraintEnd_toEndOf="@+id/receiver_phonenumber_layout_et"
+                app:layout_constraintStart_toEndOf="@+id/imageView10"
+                app:layout_constraintTop_toTopOf="@+id/imageView10">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/receiver_name_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/receiver_surename_layout_et"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="@string/familiya_lotin_hariflari_bilan"
+                android:textColorHint="@color/lightMediumGray"
+                app:boxStrokeColor="@color/color_state_selector"
+                app:boxStrokeErrorColor="@color/red"
+                app:boxStrokeWidth="2dp"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/blue"
+                app:layout_constraintEnd_toEndOf="@+id/receiver_name_layout_et"
+                app:layout_constraintStart_toStartOf="@+id/receiver_name_layout_et"
+                app:layout_constraintTop_toBottomOf="@+id/receiver_name_layout_et">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/receiver_surename_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/receiver_familyname_layout_et"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="@string/otasining_ismi_lotin_harflari_bilan"
+                android:textColorHint="@color/lightMediumGray"
+                app:boxStrokeColor="@color/color_state_selector"
+                app:boxStrokeErrorColor="@color/red"
+                app:boxStrokeWidth="2dp"
+                app:errorEnabled="true"
+                app:hintTextColor="@color/blue"
+                app:layout_constraintEnd_toEndOf="@+id/receiver_surename_layout_et"
+                app:layout_constraintStart_toStartOf="@+id/receiver_surename_layout_et"
+                app:layout_constraintTop_toBottomOf="@+id/receiver_surename_layout_et">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/receiver_familyname_et"
+                    android:layout_width="match_parent"
+                    android:textCursorDrawable="@drawable/edittext_cursor"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <CheckBox
+                android:id="@+id/receiver_familyname_checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/receiver_familyname_layout_et"
+                app:layout_constraintTop_toBottomOf="@+id/receiver_familyname_layout_et" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Otasining ismi yo'q"
+                android:textColor="@color/lightMediumGray"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/receiver_familyname_checkBox"
+                app:layout_constraintStart_toEndOf="@+id/receiver_familyname_checkBox"
+                app:layout_constraintTop_toTopOf="@+id/receiver_familyname_checkBox" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/shaxsni_tasdiqlovchi_hujjatdagi_kabi_to_liq_malumotlarni_nkiriting"
+                android:textColor="@color/lightMediumGray"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/receiver_familyname_checkBox"
+                app:layout_constraintTop_toBottomOf="@+id/receiver_familyname_checkBox" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/bottom_line"
+        app:layout_constraintBottom_toTopOf="@+id/new_receiver_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/new_receiver_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/light_red"
+        android:text="Davom ettirish"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:cornerRadius="7dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
