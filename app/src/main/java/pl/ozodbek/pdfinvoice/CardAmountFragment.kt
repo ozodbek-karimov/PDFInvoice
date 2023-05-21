@@ -134,7 +134,6 @@ class CardAmountFragment : Fragment() {
                     binding.receivingAmountTextInputLayput.error = null
                     resetTextSize(binding.sendingAmountTextInputEdittext)
                     updateTextSize(binding.receivingAmountTextInputEdittext)
-                    updateTextSize(binding.sendingAmountTextInputEdittext)
                 }
 
                 // Continue with the rest of the code for sending amount
@@ -221,7 +220,6 @@ class CardAmountFragment : Fragment() {
                     binding.sendingAmountTextInputLayout.error = null
                     resetTextSize(binding.receivingAmountTextInputEdittext)
                     updateTextSize(binding.sendingAmountTextInputEdittext)
-                    updateTextSize(binding.receivingAmountTextInputEdittext)
                 }
 
                 // Continue with the rest of the code for receiving amount
