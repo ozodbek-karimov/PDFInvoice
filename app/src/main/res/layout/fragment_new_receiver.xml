@@ -9,8 +9,8 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/view3"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toTopOf="@+id/line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,6 @@
             android:layout_height="match_parent"
             android:background="@color/cardViewColor"
             android:paddingHorizontal="20dp"
-            android:paddingVertical="15dp"
             tools:context=".NewReceiverFragment">
 
 
@@ -29,6 +28,7 @@
                 android:id="@+id/receiver_card"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:layout_marginTop="25dp"
                 app:cardBackgroundColor="@color/backgroundColor"
                 app:cardCornerRadius="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -215,16 +215,18 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/receiver_phonenumber_layout_et"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/CustomTextInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/telefon"
                 android:textColorHint="@color/lightMediumGray"
+                android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
                 app:boxStrokeColor="@color/color_state_selector"
                 app:boxStrokeErrorColor="@color/red"
                 app:boxStrokeWidth="2dp"
                 app:errorEnabled="true"
+                app:errorIconDrawable="@null"
                 app:hintTextColor="@color/blue"
                 app:layout_constraintEnd_toEndOf="@+id/phone_number_picker"
                 app:layout_constraintStart_toStartOf="@+id/phone_number_picker"
@@ -238,7 +240,6 @@
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:maxLength="9"
-                    android:textCursorDrawable="@drawable/edittext_cursor"
                     android:textColor="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -264,16 +265,18 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/receiver_name_layout_et"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/CustomTextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:hint="@string/ism_lotin_harflari_bilan"
                 android:textColorHint="@color/lightMediumGray"
+                android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
                 app:boxStrokeColor="@color/color_state_selector"
                 app:boxStrokeErrorColor="@color/red"
                 app:boxStrokeWidth="2dp"
                 app:errorEnabled="true"
+                app:errorIconDrawable="@null"
                 app:hintTextColor="@color/blue"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView10"
                 app:layout_constraintEnd_toEndOf="@+id/receiver_phonenumber_layout_et"
@@ -281,26 +284,28 @@
                 app:layout_constraintTop_toTopOf="@+id/imageView10">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/receiver_name_et"
+                    android:id="@+id/maskedEditTextCardPeaker"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textCursorDrawable="@drawable/edittext_cursor"
-                    android:inputType="textPersonName"
-                    android:textColor="@color/white" />
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:textColor="@color/white"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/receiver_surename_layout_et"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/CustomTextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:hint="@string/familiya_lotin_hariflari_bilan"
                 android:textColorHint="@color/lightMediumGray"
+                android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
                 app:boxStrokeColor="@color/color_state_selector"
                 app:boxStrokeErrorColor="@color/red"
                 app:boxStrokeWidth="2dp"
                 app:errorEnabled="true"
+                app:errorIconDrawable="@null"
                 app:hintTextColor="@color/blue"
                 app:layout_constraintEnd_toEndOf="@+id/receiver_name_layout_et"
                 app:layout_constraintStart_toStartOf="@+id/receiver_name_layout_et"
@@ -310,23 +315,25 @@
                     android:id="@+id/receiver_surename_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textCursorDrawable="@drawable/edittext_cursor"
-                    android:inputType="textPersonName"
-                    android:textColor="@color/white" />
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    android:textColor="@color/white"
+                  />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/receiver_familyname_layout_et"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                style="@style/CustomTextInputLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:hint="@string/otasining_ismi_lotin_harflari_bilan"
                 android:textColorHint="@color/lightMediumGray"
+                android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
                 app:boxStrokeColor="@color/color_state_selector"
                 app:boxStrokeErrorColor="@color/red"
                 app:boxStrokeWidth="2dp"
                 app:errorEnabled="true"
+                app:errorIconDrawable="@null"
                 app:hintTextColor="@color/blue"
                 app:layout_constraintEnd_toEndOf="@+id/receiver_surename_layout_et"
                 app:layout_constraintStart_toStartOf="@+id/receiver_surename_layout_et"
@@ -335,9 +342,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/receiver_familyname_et"
                     android:layout_width="match_parent"
-                    android:textCursorDrawable="@drawable/edittext_cursor"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
+                    android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
                     android:textColor="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -345,7 +351,7 @@
                 android:id="@+id/receiver_familyname_checkBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:buttonTint="@color/light_red"
                 app:layout_constraintStart_toStartOf="@+id/receiver_familyname_layout_et"
                 app:layout_constraintTop_toBottomOf="@+id/receiver_familyname_layout_et" />
 
@@ -366,9 +372,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:text="@string/shaxsni_tasdiqlovchi_hujjatdagi_kabi_to_liq_malumotlarni_nkiriting"
                 android:textColor="@color/lightMediumGray"
                 android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/receiver_familyname_checkBox"
                 app:layout_constraintTop_toBottomOf="@+id/receiver_familyname_checkBox" />
 
@@ -377,22 +385,22 @@
 
 
     <View
-        android:id="@+id/view3"
+        android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:layout_marginBottom="2dp"
         android:background="@drawable/bottom_line"
-        app:layout_constraintBottom_toTopOf="@+id/new_receiver_btn"
+        app:layout_constraintBottom_toTopOf="@+id/readyButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/new_receiver_btn"
+        android:id="@+id/readyButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="5dp"
         android:backgroundTint="@color/light_red"
         android:text="Davom ettirish"
         android:textAllCaps="false"

@@ -6,4 +6,25 @@
     </style>
 
     <style name="Theme.PDFInvoice" parent="Base.Theme.PDFInvoice" />
+
+    <style name="CustomTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textCursorDrawable">@drawable/edittext_cursor</item>
+    </style>
+
+    <style name="CustomTextInputLayout2" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:textCursorDrawable">@drawable/edittext_cursor</item>
+        <item name="hintEnabled">false</item>
+        <item name="theme">@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="prefixTextColor">@color/white</item>
+        <item name="hintAnimationEnabled">true</item>
+        <item name="boxStrokeWidthFocused">0dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ThemeOverlay.AppTheme.TextInputEditText.Outlined" parent="">
+        <item name="colorControlActivated">@color/blue</item>
+    </style>
 </resources>

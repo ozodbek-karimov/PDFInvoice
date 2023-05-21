@@ -12,25 +12,25 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintBottom_toTopOf="@+id/line"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <View
-        android:id="@+id/view3"
+        android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="3dp"
         android:layout_marginBottom="2dp"
         android:background="@drawable/bottom_line"
-        app:layout_constraintBottom_toTopOf="@+id/new_receiver_btn"
+        app:layout_constraintBottom_toTopOf="@+id/newReceiverButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/new_receiver_btn"
+        android:id="@+id/newReceiverButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"

@@ -23,5 +23,14 @@
     <string name="familiya_lotin_hariflari_bilan">Familiya lotin hariflari bilan</string>
     <string name="otasining_ismi_lotin_harflari_bilan">Otasining ismi lotin harflari bilan</string>
     <string name="shaxsni_tasdiqlovchi_hujjatdagi_kabi_to_liq_malumotlarni_nkiriting">Shaxsni tasdiqlovchi hujjatdagi kabi to\'liq malumotlarni \nkiriting</string>
+    <string name="ommabop_mamlakatlar">Ommabop mamlakatlar</string>
+    <string name="uzbekistan">Uzbekistan</string>
+    <string name="ok">OK</string>
+    <string name="_579101372">579101372</string>
+    <string name="sherzod">Sherzod</string>
+    <string name="sh">SH</string>
+    <string name="karta_raqami">Karta raqami</string>
+    <string name="o_tkazmani_faqat">O\'tkazmani faqat Uzcard, HUMO, Visa va MC \nkartalariga o\'tkazish mumkin. Oluvchilarning eminent-banki tomononidan vositachilik haq \ni ushlanishi mumkin. Oluvchining emiment-bankida tarifini aniqlashtiring.</string>
+    <string name="tayyor">Tayyor</string>
 
 </resources>

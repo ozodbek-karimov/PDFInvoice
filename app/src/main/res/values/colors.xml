@@ -10,6 +10,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#9C0707</color>
     <color name="blue">#03A9F4</color>
+    <color name="backy">#348EFD</color>
     <color name="light_red">#BC3232</color>
 
 
@@ -30,6 +31,10 @@
     <color name="red_real">#FF4646</color>
     <color name="yellow">#FFC114</color>
     <color name="green">#00C980</color>
+
+
+    <attr name="maskColor" format="color" />
+    <attr name="hideHintWhenEmpty" format="boolean" />
 
 
 </resources>

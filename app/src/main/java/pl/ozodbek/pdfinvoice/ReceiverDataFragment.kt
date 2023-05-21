@@ -20,7 +20,7 @@ class ReceiverDataFragment : Fragment() {
         _binding = FragmentReceiverdataBinding.inflate(inflater, container, false)
 
 
-        binding.newReceiverBtn.setOnClickListener {
+        binding.newReceiverButton.setOnClickListener {
                 findNavController().navigate(R.id.action_detailFragment_to_newReceiverFragment)
         }
 

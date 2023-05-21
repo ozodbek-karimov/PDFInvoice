@@ -40,5 +40,29 @@
         <action
             android:id="@+id/action_newReceiverFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_newReceiverFragment_to_savedContactsFragment"
+            app:destination="@id/savedContactsFragment" />
+        <action
+            android:id="@+id/action_newReceiverFragment_to_countriesFragment"
+            app:destination="@id/countriesFragment" />
+        <action
+            android:id="@+id/action_newReceiverFragment_to_receiverCardPeakerFragment"
+            app:destination="@id/receiverCardPeakerFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/countriesFragment"
+        android:name="pl.ozodbek.pdfinvoice.CountriesFragment"
+        android:label="fragment_countries"
+        tools:layout="@layout/fragment_countries" />
+    <fragment
+        android:id="@+id/savedContactsFragment"
+        android:name="pl.ozodbek.pdfinvoice.SavedContactsFragment"
+        android:label="fragment_saved_contacts"
+        tools:layout="@layout/fragment_saved_contacts" />
+    <fragment
+        android:id="@+id/receiverCardPeakerFragment"
+        android:name="pl.ozodbek.pdfinvoice.ReceiverCardPeckerFragment"
+        android:label="fragment_receiver_card_peaker"
+        tools:layout="@layout/fragment_receiver_card_peaker" />
 </navigation>

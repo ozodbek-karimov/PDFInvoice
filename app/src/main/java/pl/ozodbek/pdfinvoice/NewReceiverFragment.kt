@@ -9,6 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
+import androidx.navigation.fragment.findNavController
+import com.daimajia.androidanimations.library.Techniques
+import com.daimajia.androidanimations.library.YoYo
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import pl.ozodbek.pdfinvoice.databinding.FragmentNewReceiverBinding
@@ -18,6 +21,8 @@ class NewReceiverFragment : Fragment() {
     private var _binding: FragmentNewReceiverBinding? = null
     private val binding get() = _binding!!
 
+    private var lastFocusedIndex = 0
+
     @SuppressLint("ResourceAsColor")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +31,24 @@ class NewReceiverFragment : Fragment() {
         _binding = FragmentNewReceiverBinding.inflate(inflater, container, false)
 
         setupEditTextListeners()
+        checkBoxSetup()
 
+        binding.phoneNumberPicker.setOnClickListener {
+            findNavController().navigate(R.id.action_newReceiverFragment_to_countriesFragment)
+        }
+
+        binding.savedContacts.setOnClickListener {
+            findNavController().navigate(R.id.action_newReceiverFragment_to_savedContactsFragment)
+        }
+
+        binding.receiverCard.setOnClickListener {
+            findNavController().navigate(R.id.action_newReceiverFragment_to_receiverCardPeakerFragment)
+        }
+
+        return binding.root
+    }
+
+    private fun checkBoxSetup() {
         binding.receiverFamilynameCheckBox.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
 
@@ -38,7 +60,6 @@ class NewReceiverFragment : Fragment() {
                 checkBoxDrawable.setTintList(ColorStateList.valueOf(colorRed))
 
                 binding.receiverFamilynameCheckBox.buttonDrawable = checkBoxDrawable
-
 
 
                 binding.receiverFamilynameLayoutEt.boxBackgroundColor =
@@ -65,58 +86,72 @@ class NewReceiverFragment : Fragment() {
                 )
                 binding.receiverFamilynameLayoutEt.hintTextColor =
                     ContextCompat.getColorStateList(requireContext(), R.color.blue)
-                setupValidationForNonPhoneNumberInputs(
+                setupValidationForOtherInputs(
                     binding.receiverFamilynameEt,
                     binding.receiverFamilynameLayoutEt,
-                    "Maydonni to'ldiring"
+                    "Maydonni to'ldiring",
+                    2
                 )
                 binding.receiverFamilynameLayoutEt.hint =
                     getString(R.string.otasining_ismi_lotin_harflari_bilan)
                 binding.receiverFamilynameLayoutEt.isEnabled = true
             }
         }
-
-
-
-        return binding.root
     }
 
     private fun setupEditTextListeners() {
+
+        // Set focus on the TextInputLayout when the fragment is shown
+
         setupValidationForPhoneNumberInput(
             binding.receiverPhonenumberEt,
             binding.receiverPhonenumberLayoutEt,
-            "Telefon raqamida raqamlarning hammasi ham ko'rsatilmagan"
+            "Telefon raqamida raqamlarning hammasi ham ko'rsatilmagan",
+            0
         )
-        setupValidationForNonPhoneNumberInputs(
-            binding.receiverNameEt,
+        setupValidationForOtherInputs(
+            binding.maskedEditTextCardPeaker,
             binding.receiverNameLayoutEt,
-            "Maydonni to'ldiring"
+            "Maydonni to'ldiring",
+            1
         )
-        setupValidationForNonPhoneNumberInputs(
+        setupValidationForOtherInputs(
             binding.receiverSurenameEt,
             binding.receiverSurenameLayoutEt,
-            "Maydonni to'ldiring"
+            "Maydonni to'ldiring",
+            2
         )
-        setupValidationForNonPhoneNumberInputs(
+        setupValidationForOtherInputs(
             binding.receiverFamilynameEt,
             binding.receiverFamilynameLayoutEt,
-            "Maydonni to'ldiring"
+            "Maydonni to'ldiring",
+            3
         )
     }
 
-    private fun setupValidationForNonPhoneNumberInputs(
+    private fun showErrorAnimation(textInputLayout: TextInputLayout) {
+        YoYo.with(Techniques.Shake)
+            .duration(400)
+            .repeat(0)
+            .playOn(textInputLayout)
+    }
+
+    private fun setupValidationForOtherInputs(
         textInputEditText: TextInputEditText,
         textInputLayout: TextInputLayout,
-        errorDescription: String
+        errorDescription: String,
+        focusIndex: Int
+
     ) {
         var showError = false
 
         textInputEditText.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
             if (!hasFocus) {
+                saveLastFocusedIndex(focusIndex)
                 val text = textInputEditText.text?.toString() ?: ""
                 if (text.isEmpty()) {
                     textInputLayout.error = errorDescription
-                    textInputLayout.errorIconDrawable = null
+                    showErrorAnimation(textInputLayout)
                     showError = true
                 } else {
                     textInputLayout.error = null
@@ -129,7 +164,7 @@ class NewReceiverFragment : Fragment() {
             if (textInputEditText.isFocused && showError) {
                 if (text!!.isEmpty()) {
                     textInputLayout.error = errorDescription
-                    textInputLayout.errorIconDrawable = null
+                    showErrorAnimation(textInputLayout)
                 } else {
                     showError = false
                     textInputLayout.error = null
@@ -141,32 +176,29 @@ class NewReceiverFragment : Fragment() {
     private fun setupValidationForPhoneNumberInput(
         textInputEditText: TextInputEditText,
         textInputLayout: TextInputLayout,
-        errorDescription: String
+        errorDescription: String,
+        focusIndex: Int
     ) {
         var showError = false
-
         textInputEditText.onFocusChangeListener = View.OnFocusChangeListener { _, hasFocus ->
             if (!hasFocus) {
+                saveLastFocusedIndex(focusIndex)
                 val text = textInputEditText.text?.toString() ?: ""
-                if (text.length < 9) {
+                if (text.isEmpty() && text.length < 9) {
                     textInputLayout.error = errorDescription
-                    textInputLayout.errorIconDrawable = null
                     showError = true
+                    showErrorAnimation(textInputLayout)
                 } else {
                     textInputLayout.error = null
                     showError = false
                 }
-            } else {
-                textInputLayout.error = null
-                showError = false
             }
         }
 
         textInputEditText.doOnTextChanged { text, _, _, _ ->
             if (textInputEditText.isFocused && showError) {
-                if (text!!.length < 9) {
+                if (text!!.isEmpty()) {
                     textInputLayout.error = errorDescription
-                    textInputLayout.errorIconDrawable = null
                 } else {
                     showError = false
                     textInputLayout.error = null
@@ -175,9 +207,20 @@ class NewReceiverFragment : Fragment() {
         }
     }
 
+    private fun setFocusOnEditText(lastFocusedIndex: Int) {
+        when (lastFocusedIndex) {
+            0 -> binding.receiverPhonenumberEt.requestFocus()
+            1 -> binding.maskedEditTextCardPeaker.requestFocus()
+            2 -> binding.receiverSurenameEt.requestFocus()
+            3 -> binding.receiverFamilynameEt.requestFocus()
+        }
+    }
+    private fun saveLastFocusedIndex(index: Int) {
+        lastFocusedIndex = index
+    }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onResume() {
+        super.onResume()
+        setFocusOnEditText(lastFocusedIndex)
     }
 }
